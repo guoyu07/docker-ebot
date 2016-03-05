@@ -39,3 +39,5 @@ EXPOSE 12360 12361
 ADD	entrypoint.sh /sbin/entrypoint.sh
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
+
+CMD ["<EBOTHOMEFOLDER_HERE>"]

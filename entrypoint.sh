@@ -1,2 +1,2 @@
 #!/bin/bash
-exec php /opt/eBot/bootstrap.php
+exec php $1/bootstrap.php
