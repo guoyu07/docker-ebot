@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-ENV ebothome="<ebot-directory>" ebotip="<ebotip>" mysqluser="<mysqluser>" mysqlpw="<mysqlpw>" mysqldb="<mysqldb>"
+ENV ebothome="<ebot-directory>" ebotip="<ebotip>"
 
 RUN \
 	apt-get update && \
@@ -24,17 +24,12 @@ RUN \
 	cd ${ebothome} && \
 	/usr/bin/php /usr/bin/composer.phar install
 
-#configure ebot
-RUN \
-	sed -i "s/MYSQL_USER = \"ebotv3\"/MYSQL_USER = \"$mysqluser\"/g" ${ebothome}/config/config.ini && \
-	sed -i "s/MYSQL_PASS = \"ebotv3\"/MYSQL_PASS = \"$mysqlpw\"/g" ${ebothome}/config/config.ini && \
-	sed -i "s/MYSQL_BASE = \"ebotv3\"/MYSQL_BASE = \"$mysqldb\"/g" ${ebothome}/config/config.ini && \
-	sed -i "s/BOT_IP = \"127.0.0.1\"/BOT_IP = \"$ebotip\"/g" ${ebothome}/config/config.ini
-
 #npm shit
-RUN 	npm install socket.io formidable archiver
+RUN npm install socket.io formidable archiver
 
 EXPOSE 12360 12361
+
+COPY Match.php ${ebothome}/src/eBot/Match/Match.php
 
 ADD	entrypoint.sh /sbin/entrypoint.sh
 
