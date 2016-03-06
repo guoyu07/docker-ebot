@@ -31,8 +31,8 @@ EXPOSE 12360 12361
 
 COPY Match.php ${ebothome}/src/eBot/Match/Match.php
 
-ADD	entrypoint.sh /sbin/entrypoint.sh
+ADD entrypoint.sh /sbin/entrypoint.sh
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 
-CMD ["<EBOTHOMEFOLDER_HERE>"]
+CMD ["<EBOT_HOMEFOLDER_HERE>", "<EBOT_IP_HERE"]
