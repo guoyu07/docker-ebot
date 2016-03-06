@@ -11,12 +11,18 @@ Usage
 provide information for:
 
  - 	  eBot installation folder
+
+in the Dockerfile
+
+
+provide information for:
+
  -    eBot IP-address
  -    MySQL-username
  -    MySQL-password
  -    MySQL-db
 
-in the Dockerfile
+in the entrypoint.sh
 
 Usage with HTTPS webinterface
 -------
