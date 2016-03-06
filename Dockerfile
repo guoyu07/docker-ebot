@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-ENV ebothome="<ebot-directory>" ebotip="<ebotip>"
+ENV ebothome="<ebot-directory>"
 
 RUN \
 	apt-get update && \
@@ -35,4 +35,4 @@ ADD entrypoint.sh /sbin/entrypoint.sh
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 
-CMD ["<EBOT_HOMEFOLDER_HERE>", "<EBOT_IP_HERE"]
+CMD ["<EBOT_HOMEFOLDER_HERE>"]

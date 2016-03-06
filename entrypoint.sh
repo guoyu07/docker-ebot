@@ -1,6 +1,6 @@
 #!/bin/bash
 EBOT_DIR=$1
-EBOT_IP=$2
+EBOT_IP=""
 MYSQL_USER=""
 MYSQL_PASS=""
 MYSQL_DB=""
