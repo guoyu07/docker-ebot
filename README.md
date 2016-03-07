@@ -1,4 +1,4 @@
-dockereBot
+docker-eBot
 ==========
 
 This is a Docker image of eBot.
