@@ -25,4 +25,3 @@ VOLUME ["$EBOT_HOME/demos"]
 EXPOSE 12360 12361
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
-CMD ["$EBOT_HOME"]
