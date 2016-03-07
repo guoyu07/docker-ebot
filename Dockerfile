@@ -21,7 +21,7 @@ RUN apt-get update && \
 
 COPY Match.php $EBOT_HOME/src/eBot/Match/Match.php
 
-VOLUME ["$EBOT_HOME/demos"]
+VOLUME ["$EBOT_HOME/demos", "$EBOT_HOME/logs"]
 
 EXPOSE 12360 12361
 
