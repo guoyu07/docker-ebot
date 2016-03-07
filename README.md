@@ -1,30 +1,23 @@
-Docker eBot
+dockereBot
 ==========
 
-This is a Docker implementation of eBot.
+This is a Docker image of eBot.
 Please be aware that this is only the server.
 
 The web-version of this will be done soon.
 
 Usage
--------
-provide information for:
+-----
+Provide following environment variables, when running the image through `docker` or `docker-compose`:
 
- - 	  eBot installation folder
-
-in the Dockerfile
-
-
-provide information for:
-
- -    eBot IP-address
- -    MySQL-username
- -    MySQL-password
- -    MySQL-db
-
-in the entrypoint.sh
+* `EBOT_IP`
+* `MYSQL_HOST`
+* `MYSQL_PORT`
+* `MYSQL_USER
+* `MYSQL_PASS
+* `MYSQL_DB`
 
 Usage with HTTPS webinterface
--------
+-----------------------------
 
-visit [https://github.com/carazzim0/nginx-eBot](https://github.com/carazzim0/nginx-eBot) for https nginx configuration
+Visit [https://github.com/carazzim0/nginx-eBot](https://github.com/carazzim0/nginx-eBot) for nginx https configuration.
