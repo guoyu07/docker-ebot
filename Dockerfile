@@ -13,7 +13,7 @@ RUN apt-get update && \
     /bin/ln -s /usr/bin/nodejs /usr/bin/node && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin && \
     mkdir "$EBOT_HOME" && \
-    git clone https://github.com/deStrO/eBot-CSGO.git . && \    
+    git clone https://github.com/deStrO/eBot-CSGO.git "$EBOT_HOME" && \
     cd "$EBOT_HOME" && \
     /usr/bin/php /usr/bin/composer.phar install && \
     npm install socket.io formidable archiver
