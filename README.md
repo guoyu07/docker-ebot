@@ -13,8 +13,8 @@ Provide following environment variables, when running the image through `docker`
 * `EBOT_IP`
 * `MYSQL_HOST`
 * `MYSQL_PORT`
-* `MYSQL_USER
-* `MYSQL_PASS
+* `MYSQL_USER`
+* `MYSQL_PASS`
 * `MYSQL_DB`
 
 Usage with HTTPS webinterface
