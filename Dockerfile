@@ -18,7 +18,9 @@ RUN apt-get update && \
     /usr/bin/php /usr/bin/composer.phar install && \
     npm install socket.io formidable archiver
 
-COPY Match.php ${EBOT_HOME}/src/eBot/Match/Match.php
+COPY Match.php $EBOT_HOME/src/eBot/Match/Match.php
+
+VOLUME ["$EBOT_HOME/demos"]
 
 EXPOSE 12360 12361
 
