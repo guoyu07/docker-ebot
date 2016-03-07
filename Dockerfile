@@ -15,6 +15,7 @@ RUN apt-get update && \
     mkdir "$EBOT_HOME" && \
     git clone https://github.com/deStrO/eBot-CSGO.git "$EBOT_HOME" && \
     cd "$EBOT_HOME" && \
+    git checkout "master" && \
     /usr/bin/php /usr/bin/composer.phar install && \
     npm install socket.io formidable archiver
 
