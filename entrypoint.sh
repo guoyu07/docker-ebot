@@ -14,4 +14,4 @@ sed -i "s/MYSQL_PASS =.*/MYSQL_PASS = \"$MYSQL_PASS\"/g" $EBOT_HOME/config/confi
 sed -i "s/MYSQL_BASE =.*/MYSQL_BASE = \"$MYSQL_DB\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/BOT_IP =.*/BOT_IP = \"$EBOT_IP\"/g" $EBOT_HOME/config/config.ini
 
-exec php $EBOT_HOME/bootstrap.php
+exec php "$EBOT_HOME/bootstrap.php"
