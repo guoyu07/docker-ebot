@@ -7,7 +7,7 @@ ADD entrypoint.sh /sbin/entrypoint.sh
 RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get clean && \
-    apt-get -y install nodejs npm curl git php5-cli php5-mysql screen git && \
+    apt-get -y install nodejs npm curl git php5-cli php5-mysqlnd screen git && \
     apt-get clean && \
     sed -i "s~;date.timezone =~date.timezone = $TIMEZONE~g" /etc/php5/cli/php.ini && \
     /bin/ln -s /usr/bin/nodejs /usr/bin/node && \

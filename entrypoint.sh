@@ -1,7 +1,7 @@
 #!/bin/bash
 
-EBOT_IP="${EBOT_IP:-}"
-MYSQL_HOST="${MYSQL_HOST:-database}"
+EBOT_IP="${EBOT_IP:-localhost}"
+MYSQL_HOST="${MYSQL_HOST:-127.0.0.1}"
 MYSQL_PORT="${MYSQL_PORT:-3306}"
 MYSQL_USER="${MYSQL_USER:-ebot}"
 MYSQL_PASS="${MYSQL_PASS:-ebot}"
