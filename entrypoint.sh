@@ -10,6 +10,8 @@ MYSQL_DB="${MYSQL_DB:-ebot}"
 LO3_METHOD="${LO3_METHOD:-restart}"
 KO3_METHOD="${KO3_METHOD:-restart}"
 
+DELAY_READY="${DELAY_READY:-false}"
+
 sed -i "s/BOT_IP =.*/BOT_IP = \"$EBOT_IP\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/MYSQL_IP =.*/MYSQL_IP = \"$MYSQL_HOST\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/MYSQL_PORT =.*/MYSQL_PORT = \"$MYSQL_PORT\"/g" $EBOT_HOME/config/config.ini
@@ -19,5 +21,7 @@ sed -i "s/MYSQL_BASE =.*/MYSQL_BASE = \"$MYSQL_DB\"/g" $EBOT_HOME/config/config.
 
 sed -i "s/LO3_METHOD =.*/LO3_METHOD = \"$LO3_METHOD\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/KO3_METHOD =.*/KO3_METHOD = \"$KO3_METHOD\"/g" $EBOT_HOME/config/config.ini
+
+sed -i "s/DELAY_READY = .*/DELAY_READY = $DELAY_READY/g" $EBOT_HOME/config/config.ini
 
 exec php "$EBOT_HOME/bootstrap.php"
