@@ -22,9 +22,9 @@ sed -i "s/MYSQL_PASS =.*/MYSQL_PASS = \"$MYSQL_PASS\"/g" $EBOT_HOME/config/confi
 sed -i "s/MYSQL_BASE =.*/MYSQL_BASE = \"$MYSQL_DB\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/LO3_METHOD =.*/LO3_METHOD = \"$LO3_METHOD\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/KO3_METHOD =.*/KO3_METHOD = \"$KO3_METHOD\"/g" $EBOT_HOME/config/config.ini
-sed -i "s/DEMO_DOWNLOAD =.*/DEMO_DOWNLOAD = \"$DEMO_DOWNLOAD\"/g" $EBOT_HOME/config/config.ini
-sed -i "s/REMIND_RECORD =.*/REMIND_RECORD = \"$REMIND_RECORD\"/g" $EBOT_HOME/config/config.ini
-sed -i "s/DAMAGE_REPORT =.*/DAMAGE_REPORT = \"$DAMAGE_REPORT\"/g" $EBOT_HOME/config/config.ini
+sed -i "s/DEMO_DOWNLOAD =.*/DEMO_DOWNLOAD = $DEMO_DOWNLOAD/g" $EBOT_HOME/config/config.ini
+sed -i "s/REMIND_RECORD =.*/REMIND_RECORD = $REMIND_RECORD/g" $EBOT_HOME/config/config.ini
+sed -i "s/DAMAGE_REPORT =.*/DAMAGE_REPORT = $DAMAGE_REPORT/g" $EBOT_HOME/config/config.ini
 sed -i "s/DELAY_READY = .*/DELAY_READY = $DELAY_READY/g" $EBOT_HOME/config/config.ini
 
 exec php "$EBOT_HOME/bootstrap.php"
