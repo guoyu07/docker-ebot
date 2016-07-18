@@ -9,7 +9,9 @@ MYSQL_DB="${MYSQL_DB:-ebot}"
 
 LO3_METHOD="${LO3_METHOD:-restart}"
 KO3_METHOD="${KO3_METHOD:-restart}"
-
+DEMO_DOWNLOAD="${DEMO_DOWNLOAD:-true}"
+REMIND_RECORD="${REMIND_RECORD:-false}"
+DAMAGE_REPORT="${DAMAGE_REPORT:-false}"
 DELAY_READY="${DELAY_READY:-false}"
 
 sed -i "s/BOT_IP =.*/BOT_IP = \"$EBOT_IP\"/g" $EBOT_HOME/config/config.ini
@@ -18,10 +20,11 @@ sed -i "s/MYSQL_PORT =.*/MYSQL_PORT = \"$MYSQL_PORT\"/g" $EBOT_HOME/config/confi
 sed -i "s/MYSQL_USER =.*/MYSQL_USER = \"$MYSQL_USER\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/MYSQL_PASS =.*/MYSQL_PASS = \"$MYSQL_PASS\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/MYSQL_BASE =.*/MYSQL_BASE = \"$MYSQL_DB\"/g" $EBOT_HOME/config/config.ini
-
 sed -i "s/LO3_METHOD =.*/LO3_METHOD = \"$LO3_METHOD\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/KO3_METHOD =.*/KO3_METHOD = \"$KO3_METHOD\"/g" $EBOT_HOME/config/config.ini
-
+sed -i "s/DEMO_DOWNLOAD =.*/DEMO_DOWNLOAD = \"$DEMO_DOWNLOAD\"/g" $EBOT_HOME/config/config.ini
+sed -i "s/REMIND_RECORD =.*/REMIND_RECORD = \"$REMIND_RECORD\"/g" $EBOT_HOME/config/config.ini
+sed -i "s/DAMAGE_REPORT =.*/DAMAGE_REPORT = \"$DAMAGE_REPORT\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/DELAY_READY = .*/DELAY_READY = $DELAY_READY/g" $EBOT_HOME/config/config.ini
 
 exec php "$EBOT_HOME/bootstrap.php"
