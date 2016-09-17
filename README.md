@@ -10,7 +10,7 @@ Usage
 -----
 Provide following environment variables, when running the image through `docker` or `docker-compose`:
 
-* `EBOT_IP`
+* `EXTERNAL_IP
 * `MYSQL_HOST`
 * `MYSQL_PORT`
 * `MYSQL_USER`
@@ -24,8 +24,7 @@ docker run \
   -v /docker/ebot/logs:/ebot/logs \
   -p 12360:12360 \
   -p 12361:12361 \
-  --net=host \
-  --name eBot \
+  --name ebot \
   ebot-docker
 ```
 
