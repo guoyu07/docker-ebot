@@ -1,6 +1,7 @@
 #!/bin/bash
 
-EBOT_IP="${EBOT_IP:-}"
+CONTAINER_IP=$(hostname -i)
+EXTERNAL_IP="${EXTERNAL_IP:-}"
 MYSQL_HOST="${MYSQL_HOST:-}"
 MYSQL_PORT="${MYSQL_PORT:-3306}"
 MYSQL_USER="${MYSQL_USER:-ebot}"
@@ -14,7 +15,8 @@ REMIND_RECORD="${REMIND_RECORD:-false}"
 DAMAGE_REPORT="${DAMAGE_REPORT:-false}"
 DELAY_READY="${DELAY_READY:-false}"
 
-sed -i "s/BOT_IP =.*/BOT_IP = \"$EBOT_IP\"/g" $EBOT_HOME/config/config.ini
+sed -i "s/BOT_IP =.*/BOT_IP = \"$CONTAINER_IP\"/g" $EBOT_HOME/config/config.ini
+sed -i "s/EXTERNAL_LOG_IP = .*/EXTERNAL_LOG_IP = \"$EXTERNAL_IP\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/MYSQL_IP =.*/MYSQL_IP = \"$MYSQL_HOST\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/MYSQL_PORT =.*/MYSQL_PORT = \"$MYSQL_PORT\"/g" $EBOT_HOME/config/config.ini
 sed -i "s/MYSQL_USER =.*/MYSQL_USER = \"$MYSQL_USER\"/g" $EBOT_HOME/config/config.ini
