@@ -13,7 +13,7 @@ RUN apt-get update && \
     tar -xjf php-"${PHP_VERSION}".tar.bz2 && \
     cd php-"${PHP_VERSION}" && \
     ./configure --prefix /usr/local --with-mysql --enable-maintainer-zts --enable-sockets --with-openssl --with-pdo-mysql && \
-    make && \
+    make -j4 && \
     make install && \
     cd /home/install && \
     wget https://pecl.php.net/get/pthreads-"${PTHREADS_VERSION}".tgz && \
@@ -21,7 +21,7 @@ RUN apt-get update && \
     cd pthreads-"${PTHREADS_VERSION}" && \
     /usr/local/bin/phpize && \
     ./configure && \
-    make && \
+    make -j4 && \
     make install && \
     echo 'date.timezone = "${TIMEZONE}"' >> /usr/local/lib/php.ini && \
     echo 'extension=pthreads.so' >> /usr/local/lib/php.ini && \
