@@ -3,7 +3,7 @@ FROM php:5.6.25-zts
 ENV EBOT_HOME="/ebot" EBOT_VERSION="dev" TIMEZONE="Europe/Berlin" PTHREADS_VERSION="2.0.10"
 
 RUN apt-get update && \
-    apt-get install -y netcat git nodejs npm php5-curl && \
+    apt-get install -y git nodejs npm && \
     apt-get clean && \
     mkdir ${EBOT_HOME} && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
@@ -12,7 +12,7 @@ RUN apt-get update && \
     pecl install "pthreads-${PTHREADS_VERSION}" && \
     docker-php-ext-enable pthreads && \
     docker-php-ext-install mysql sockets && \
-    echo 'date.timezone = "${TIMEZONE}"' >> /usr/local/etc/php/conf.d/php.ini && \
+    echo "date.timezone = ${TIMEZONE}" >> /usr/local/etc/php/conf.d/php.ini && \
     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php --install-dir=/usr/bin && \
     php -r "unlink('composer-setup.php');" && \
