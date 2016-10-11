@@ -1,34 +1,44 @@
-docker-eBot
-==========
+docker-ebot
+================
 
-This is a Docker image of eBot.
-Please be aware that this is only the server.
+Dockerised eBot (https://github.com/deStrO/eBot-CSGO) for ease of use.
 
-The web-version of this will be done soon.
+Pre-Requisites
+--------------
+* Edit PUBLIC_IP ENV in the docker-compose.yml
+* An host **without** mysql, if you use your own mysql, delete the mysql container in the docker-compose.yml
 
-Usage
------
-Provide following environment variables, when running the image through `docker` or `docker-compose`:
+Settings
+---------
+Edit the following settings in [docker-compose.yml](docker-compose.yml) to your needs.
+#### eBot
+````
+EXTERNAL_IP: '1.2.3.4'
+MYSQL_HOST: '212.1.2.3'
+MYSQL_PORT: '3306'
+MYSQL_DB: 'ebotv3'
+MYSQL_USER: 'ebotv3'
+MYSQL_PASS: 'ebotv3'
+LO3_METHOD: 'restart'
+KO3_METHOD: 'restart'
+DEMO_DOWNLOAD: 'true'
+REMIND_RECORD: 'false'
+DAMAGE_REPORT: 'false'
+DELAY_READY: 'false'
+````
 
-* `EXTERNAL_IP
-* `MYSQL_HOST`
-* `MYSQL_PORT`
-* `MYSQL_USER`
-* `MYSQL_PASS`
-* `MYSQL_DB`
+Run
+---
 
-example for docker run:
-```
-docker run \
-  -v /docker/ebot/demos:/ebot/demos \
-  -v /docker/ebot/logs:/ebot/logs \
-  -p 12360:12360 \
-  -p 12361:12361 \
-  --name ebot \
-  ebot-docker
-```
+`docker-compose up -d`
 
-Usage with HTTPS webinterface
------------------------------
+Quick start
+-----------
 
-Visit [https://github.com/carazzim0/nginx-eBot](https://github.com/carazzim0/nginx-eBot) for nginx https configuration.
+
+
+Credits
+-------
+* carazzim0
+* destr0
+* jeff
